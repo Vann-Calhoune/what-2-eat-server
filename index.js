@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-
 const port = process.env.PORT || 3001;
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -10,7 +9,7 @@ app.use(express.json());
 
 const db = mysql.createConnection({
     user: 'bceb2b955c92f7',
-    host: 'us-cdbr-east-06.cleardb.net ',
+    host: 'us-cdbr-east-06.cleardb.net',
     password: 'ecdebede',
     database: 'heroku_e6129dad745f4e6',
 }); 
