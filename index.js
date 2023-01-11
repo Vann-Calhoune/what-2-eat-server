@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || PORT;
+const port = process.env.PORT || 3001;
 const mysql = require('mysql2');
 const cors = require('cors');
 
