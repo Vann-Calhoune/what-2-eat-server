@@ -144,8 +144,8 @@ app.get('/search', (req, res) => {
     })
   });
 
-app.listen(3001, () => {
-    console.log('Connected to PlanetScale!')
+app.listen(process.env.PORT || PORT, () => {
+    console.log('Connected to Heroku')
 
 });
 
