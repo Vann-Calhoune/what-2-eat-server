@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+
+const port = process.env.PORT || 3001;
 const mysql = require('mysql2');
 const cors = require('cors');
 
@@ -7,10 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    password: 'password',
-    database: 'whatToEat',
+    user: 'bceb2b955c92f7',
+    host: 'us-cdbr-east-06.cleardb.net ',
+    password: 'ecdebede',
+    database: 'heroku_e6129dad745f4e6',
 }); 
 
 
@@ -144,8 +146,8 @@ app.get('/search', (req, res) => {
     })
   });
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(port)
     console.log('Connected to Heroku')
 
-});
+
 
