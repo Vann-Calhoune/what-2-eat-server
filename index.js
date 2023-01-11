@@ -7,7 +7,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     user: 'b97edf789ae3d0',
     host: 'us-cdbr-east-06.cleardb.net',
     password: '5186f0e4',
