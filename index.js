@@ -1,6 +1,3 @@
-require('dotenv').config()
-const connection = mysql.createConnection(process.env.DATABASE_URL)
-
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
