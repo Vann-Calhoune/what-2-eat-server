@@ -1,19 +1,21 @@
-require('dotenv').config()
-const connection = mysql.createConnection(process.env.DATABASE_URL)
-
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3001;
 const mysql = require('mysql2');
 const cors = require('cors');
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    password: 'password',
-    database: 'whatToEat',
+const db = mysql.createPool({
+    user: USER,
+    host: HOST,
+    password: PASS,
+    database: DATABASE,
 }); 
 
 
@@ -147,8 +149,10 @@ app.get('/search', (req, res) => {
     })
   });
 
-app.listen(3001, () => {
-    console.log('Connected to PlanetScale!')
+app.listen(port, () => {
+    console.log(`Server running good`)
+})
+    
 
-});
+
 
