@@ -3,15 +3,19 @@ const app = express();
 const port = process.env.PORT || 3001;
 const mysql = require('mysql2');
 const cors = require('cors');
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 app.use(cors());
 app.use(express.json());
 
 const db = mysql.createPool({
-    user: 'b97edf789ae3d0',
-    host: 'us-cdbr-east-06.cleardb.net',
-    password: '5186f0e4',
-    database: 'heroku_09c5a25ed55779f',
+    user: USER,
+    host: HOST,
+    password: PASS,
+    database: DATABASE,
 }); 
 
 
